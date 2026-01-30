@@ -10,6 +10,8 @@ Auto Split Terminal Extension (Autorminal)
 - Supports configuring different commands for different directories
 - Supports `~` as the home directory path
 
+![Demo](https://raw.githubusercontent.com/Envisio/Autorminal/refs/heads/master/demo.gif)
+
 ## Getting Started
 
 1. Install this extension.
