@@ -1,0 +1,41 @@
+{
+  "name": "autorminal",
+  "displayName": "Autorminal",
+  "description": "Open multi split terminals and run commands automatically on folder open.",
+  "version": "0.0.5",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "configuration": {
+      "type": "object",
+      "title": "Autorminal",
+      "properties": {
+        "Autorminal.splits": {
+          "type": "object",
+          "description": "Map of directory paths to an array of commands to run in split terminals",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "publisher": "bshao",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Envisio/Autorminal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Envisio/Autorminal/issues"
+  },
+  "homepage": "https://github.com/Envisio/Autorminal#readme",
+  "license": "MIT"
+}
