@@ -17,7 +17,6 @@ async function activate(context) {
   if (!workspaceFolders || workspaceFolders.length === 0) {
     return;
   }
-
   let activated = false;
   await Promise.all(Object.entries(splits).map(async ([dir, commands]) => {
     const absDir = expandHomeDir(dir);
@@ -28,11 +27,8 @@ async function activate(context) {
       vscode.window.showInformationMessage('Autorminal Activated');
       activated = true;
     }
-    let terminals = vscode.window.terminals.filter(t => t.creationOptions && t.creationOptions.cwd === absDir);
-    let term;
-    if (vscode.window.terminals.length > 0) {
-      term = vscode.window.terminals[0];
-    } else {
+    let term = vscode.window.terminals.find(t => t.creationOptions && t.creationOptions.cwd === absDir);
+    if (!term) {
       term = vscode.window.createTerminal({ name: `Autorminal ${absDir} #1`, cwd: absDir });
     }
     term.show();
